@@ -20,12 +20,19 @@ body{
     line-height:1.6;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:20px 50px;
-    background:rgb(0, 0, 0);
+    background:rgb(0,0,0);
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 nav h1{
@@ -36,12 +43,18 @@ nav ul{
     list-style:none;
     display:flex;
     gap:25px;
+    flex-wrap:wrap;
 }
 
 nav ul li a{
     text-decoration:none;
     color:white;
     font-weight:500;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:rgb(255,230,3);
 }
 
 section{
@@ -52,7 +65,7 @@ h2{
     text-align:center;
     font-size:2.4rem;
     margin-bottom:40px;
-    color:rgb(255, 255, 255);
+    color:white;
 }
 
 .hero{
@@ -72,11 +85,11 @@ h2{
 }
 
 .hero-text span{
-    color:rgb(255, 230, 3);
+    color:rgb(255,230,3);
 }
 
 .hero img{
-    width: 500px;;
+    width:500px;
     border-radius:50%;
     border:4px solid rgb(168,218,220);
 }
@@ -120,13 +133,62 @@ h2{
     margin-bottom:10px;
     color:rgb(168,218,220);
 }
+/*  Experience Section */
 
-.card{
-    background:rgb(30,111,114);
-    padding:25px;
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:60px;
+}
+
+.timeline-item{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+.timeline-item.reverse{
+    flex-direction:row-reverse;
+}
+
+.timeline-item img{
     width:300px;
     border-radius:10px;
+    border:3px solid rgb(168,218,220);
 }
+
+.timeline-content{
+    max-width:550px;
+}
+
+.timeline-content h3{
+    margin-bottom:10px;
+    color:rgb(168,218,220);
+}
+
+/* Certificates */
+
+.certificates{
+    display:flex;
+    gap:30px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.certificate{
+    background:rgb(30,111,114);
+    width:300px;
+    padding:25px;
+    border-radius:10px;
+}
+
+.certificate h3{
+    color:rgb(168,218,220);
+    margin-bottom:10px;
+}
+
+
+/* Contact */
 
 .contact{
     text-align:center;
@@ -144,111 +206,253 @@ h2{
 }
 
 @media(max-width:768px){
-    .hero, .project{
+
+    .hero,
+    .project,
+    .project.reverse,
+    .timeline-item,
+    .timeline-item.reverse{
         flex-direction:column;
         text-align:center;
     }
+
+    .hero img{
+        width:300px;
+    }
+
+    .timeline-item img{
+        width:280px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        justify-content:center;
+    }
+
 }
 </style>
 </head>
-
 <body>
 
 <nav>
     <h1>My Portfolio</h1>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+   <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
-
 <section class="hero">
     <div class="hero-text">
         <h1>Hi, I'm <span>Astha</span></h1>
-        <p>UI/UX Designer with hands-on experience in using Canva, Figma and Adobe & Frontend Developer focused on building clean, user-centric digital experiences using HTML, CSS, JavaScript and Flutter.</p>
+        <p>
+           A UI/UX Designer and Frontend Developer passionate about creating clean, user-friendly digital experiences. Skilled in Canva, Figma, Adobe tools, HTML, CSS, JavaScript and Flutter. Along with design and development, I enjoy leading teams, organizing events and solving real-world problems through creativity and technology.
+        </p>
     </div>
     <img src="astha.jpg" alt="Astha Profile">
+    
 </section>
-
 <section id="about">
     <h2>About Me</h2>
     <p style="max-width:800px;margin:auto;text-align:center;">
-       I am currently pursuing  B.Tech in Electronics and Communication Engineering at B.P. Poddar Institute of Management and Technology. Apart from academics, I am a core member of the <strong>Anti-Ragging Department</strong> of my college and an active volunteer in the National Service Scheme (NSS). I completed my schooling in Araria, Bihar, where I was born and brought up. My passion for learning and contributing to society drives me to actively participate in various initiatives and projects. Currently I'm freelancing, building real-world projects, and aiming for entry-level UI/UX or Frontend roles.</p>
+Electronics and Communication Engineering student from B.P. Poddar Institute of Management and Technology, Kolkata. Along with my technical background, I have gained valuable leadership experience as the Lead of the Anti-Ragging Committee and an active National Service Scheme (NSS) volunteer in my college. I enjoy combining creativity, technology and management to deliver impactful solutions. Currently, I am freelancing in Graphic Design while building real-world UI/UX and Frontend projects, and actively seeking opportunities in Designing and Management.
+    </p>
 </section>
 
 <section id="services">
     <h2>What I Do</h2>
     <div class="services">
         <div class="card">
-            <h3>UI/UX Design</h3>
-            <p>Designing intuitive and aesthetically pleasing user interfaces and thumbnails, branding logos for start-ups, banners, posters and flyers, using tools like Canva, Figma and Adobe.</p>
+            <h3>Graphic & UI/UX Design</h3>
+            <p>
+                Designing intuitive user interfaces, social media creatives, branding logos, posters, banners, flyers and promotional materials using Canva, Figma and Adobe tools.
+            </p>
+
         </div>
         <div class="card">
             <h3>Frontend Development</h3>
-            <p>Creating frameworks of websites using HTML, CSS and Java Script and also creating other projects to desing frontend part of Android apps using Flutter.</p>
+            <p>
+                Building responsive websites using HTML, CSS and JavaScript, along with developing Android application interfaces using Flutter.
+            </p>
+
+        </div>
+        <div class="card">
+            <h3>Leadership & Management</h3>
+            <p>
+                Experienced in event hosting, team management, public speaking, project coordination and organizing college events through Anti-Ragging Committee and NSS.
+            </p>
         </div>
     </div>
-</section>
 
 <section id="projects">
     <h2>Projects</h2>
-
     <div class="project reverse">
-        <img src="flyer.png" alt="To-Do App">
+        <img src="flyer.png" alt="Digital Awareness Flyer">
         <div class="project-content">
-            <h3>Flyer for awareness</h3>
-            <p>Designed this flyer to spread awareness in this digital era,concious parenting of tech-smart kids and guide them to use the technology appropiriately.</p>
+            <h3>Digital Awareness Flyer</h3>
+            <p>
+                Designed an awareness flyer promoting responsible technology usage and conscious parenting in today's digital world for a school awareness program.
+            </p>
         </div>
     </div>
 
     <div class="project">
-        <img src="Poster.png" alt="E-commerce App">
+        <img src="Poster.png" alt="Educational Poster">
         <div class="project-content">
-            <h3>Poster</h3>
-            <p>Poster for an educational platform to promote their course</p>
+            <h3>Educational Poster</h3>
+            <p>
+                Designed a promotional poster for an educational platform to advertise its professional courses.
+            </p>
         </div>
     </div>
 
     <div class="project reverse">
-        <img src="Instagram Post Portrait.png" alt="Mental Health App">
+        <img src="Instagram Post Portrait.png" alt="Instagram Creative">
         <div class="project-content">
-            <h3>Instagram Post</h3>
-            <p>Designed this instagram post to invite the guest in the new year party with Singer Ashutosh Kumar Jha </p>
+            <h3>Instagram Promotional Post</h3>
+            <p>
+                Designed an Instagram invitation post for a New Year musical event featuring singer Ashutosh Kumar Jha.
+            </p>
         </div>
     </div>
 
     <div class="project">
-        <img src="logo.png" alt="Branding Work">
+        <img src="logo.png" alt="Logo Design">
         <div class="project-content">
-            <h3>Branding & Visual Design</h3>
-            <p>Designed a branding logo for a few start-ups with its details.</p>
-        </div>
-    
-        <div class="card">
-            <h3>Web Developement</h3>
-            <p>Created this personal portfolio and a To-do list website using HTML, CSS and Java Script and got the certificate from Unified Mentor.</p>
-        </div>
-
-        <div class="card">
-            <h3>App Development</h3>
-            <p>Developed Android projects like Click-n-cart (E-commerce app) and Healing Minds (Mental healing app)using Flutter and got a certificate of completion from Ardent Computech Pvt. Ltd.</p>
-        </div>
-
-        <div class="card">
-            <h3>Cyber Security</h3>
-            <p>Completed cybersecurity basic concepts certification exam through the Digital Academic Platform of CSCOE Kolkata from WEBEL in October 2024 and working to make a project based on secure login system using my knowledge of web developement.</p>
+            <h3>Brand Identity & Logo Design</h3>
+            <p>
+                Designed logos and visual identities for startups like I-Rise (Office Spaces) while maintaining brand consistency and modern aesthetics.
+            </p>
         </div>
     </div>
 </section>
 
+
+<section id="experience">
+    <h2>Professional Experience</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <img src="Graphic designer and video editor.jpeg" alt="Mahavir Hanuman">
+            <div class="timeline-content">
+                <h3>Graphic Designer & Video Editor</h3>
+                <p>
+                    Worked as the Graphic Designer and Video Editor for the devotional song <strong>Mahavir Hanuman</strong> under Solitaire Music Company.
+                    Designed promotional posters, YouTube thumbnails, social media creatives and edited the official music video.
+                    Collaborated with the production team to ensure consistent branding and audience engagement. Apart from this, I also have managed other song projects of Ashutosh Kumar Jha.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="leadership">
+    <h2>Leadership & Achievements</h2>
+
+    <div class="timeline">
+        <div class="timeline-item reverse">
+            <img src="Won microsoft T-shirt in a quiz.jpeg" alt="Microsoft Quiz">
+            <div class="timeline-content">
+                <h3>Microsoft Campus Quiz Winner</h3>
+
+                <p>
+                    Won an official Microsoft T-shirt by performing exceptionally in a technical quiz organized by Microsoft at B.P. Poddar Institute of Management and Technology.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="timeline-item">
+            <img src="Hosting inaugration program as an Anti-ragging lead..jpeg" alt="Anti Ragging">
+            <div class="timeline-content">
+                <h3>Lead - Anti-Ragging Committee</h3>
+                <p>
+                    Served as the Lead of the Anti-Ragging Committee and hosted the inauguration programme for newly admitted students.
+                    Coordinated volunteers and ensured smooth execution of the event.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="timeline-item reverse">
+            <img src="Hosting as NSS lead.jpeg" alt="NSS">
+            <div class="timeline-content">
+                <h3>National Service Scheme (NSS)</h3>
+
+                <p>
+                    Actively served as an NSS volunteer and event host. Participated in social initiatives, awareness programmes, volunteer coordination and community service activities.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="timeline-item">
+            <img src="Healing minds.png" alt="Mental health healing app">
+
+            <div class="timeline-content">
+                <h3>Team Lead - Healing Mind</h3>
+                <p>
+                    Led a team during the college hackathon during Tech fest while presenting our React Native application "Healing Mind". Responsible for UI design created through Figma, project planning, presentation and team coordination. Apart from this, I've also developed an online shopping application "Click-n-cart" using Flutter.
+                </p>
+            </div>
+        </div>
+
+
+        <div class="timeline-item reverse">
+            <img src="Organiser in Matribhasa divas.jpeg" alt="Matribhasha Divas">
+            <div class="timeline-content">
+                <h3>Organizer - Matribhasha Divas</h3>
+                <p>
+                    Organized International Mother Language Day celebrations under NSS by managing stage activities, volunteers and overall event coordination.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section id="certificates">
+    <h2>Certificates</h2>
+    <div class="certificates">
+        <div class="certificate">
+            <h3>Web Development</h3>
+            <p>
+                Successfully completed Web Development Internship from Unified Mentor by developing a Portfolio Website and To-Do List.
+            </p>
+        </div>
+
+        <div class="certificate">
+            <h3>Flutter App Development</h3>
+
+            <p>
+                Completed Flutter Application Development Internship from Ardent Computech Pvt. Ltd. Developed Click-n-Cart application.
+            </p>
+        </div>
+
+        <div class="certificate">
+            <h3>Wireframing and Prototyping with Figma</h3>
+            <p>
+                Successfully completed the Wireframing and Prototyping with Figma certification through Coursera Platform. Designed an e-book as a project work.
+            </p>
+        </div>
+    </div>
+</section>
+    
 <section class="contact" id="contact">
     <h2>Contact Me</h2>
-    <p>If you'd like to work together or have any questions, feel free to reach out!</p>
-    <p>Email: 954astha@gmail.com</p>
+    <p>
+        I'm currently open to opportunities in Designing and Management roles.
+    </p>
+    <br>
+    <p><strong>Email:</strong> 954astha@gmail.com</p>
+    <br>
     <a href="resume.pdf" target="_blank">View Resume</a>
 </section>
-
 </body>
 </html>
